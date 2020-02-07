@@ -27,16 +27,21 @@ const validate = ( values ) => {
 };
 
 const onSubmitCallback = ( values ) => console.log( values );
-const initialValues = { firstName: '', lastName: '', select: '3', checkbox: true, radio: '2' };
+const initialValues = {
+	firstName: '',
+	lastName: '',
+	select: '3',
+	checkbox: true,
+	radio: '2',
+};
 
 export default () => (
-	<Form validate={ validate } onSubmitCallback={ onSubmitCallback } initialValues={ initialValues }>
-		{ ( {
-			getInputProps,
-			values,
-			errors,
-			handleSubmit,
-		} ) => (
+	<Form
+		validate={ validate }
+		onSubmitCallback={ onSubmitCallback }
+		initialValues={ initialValues }
+	>
+		{ ( { getInputProps, values, errors, handleSubmit } ) => (
 			<div>
 				<TextControl
 					label={ 'First Name' }
@@ -77,8 +82,10 @@ export default () => (
 				</Button>
 				<br />
 				<br />
-				Values: { JSON.stringify( values ) }<br />
-				Errors: { JSON.stringify( errors ) }<br />
+				Values: { JSON.stringify( values ) }
+				<br />
+				Errors: { JSON.stringify( errors ) }
+				<br />
 			</div>
 		) }
 	</Form>
